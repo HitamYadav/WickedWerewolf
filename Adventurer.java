@@ -1,4 +1,4 @@
-public class Adventurer extends Adventure{
+public class Adventurer extends AdventureModel{
 
 private String name; 
 private int health;
