@@ -1,7 +1,7 @@
 import java.util.Scanner;
 	
 
-	public class TextAdventure extends Adventure{
+	public class TextAdventure extends AdventureModel{
 		
 		public static void main(String[] args) {
 
@@ -28,7 +28,7 @@ import java.util.Scanner;
 	System.out.println("___________________________________________________________________________________________________");
 			
 	
-	Adventure game= new Adventure();
+	AdventureModel game= new AdventureModel();
 	game.buildLocations();
 	String nav = "";
 	int x;
