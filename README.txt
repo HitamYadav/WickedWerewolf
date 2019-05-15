@@ -4,7 +4,7 @@ The code will prompt you to enter your name, this will set your character name f
 
 The game starts with you, the user as the main character, beginning at the beginning of the street.
 
-Acceptable commands: Straight, Left, and Right
+Acceptable commands: Inventory, Straight, Left, and Right
 
 The correct order for winning the game is:
 1. Go left and get the food and water.
@@ -25,7 +25,7 @@ The correct order for winning the game is:
 
  Going to the car without the keys and gas causes you to die.
 
- Going to the house with the werewolves without Ammo will cause you to diee.
+ Going to the house with the werewolves without Ammo will cause you to die.
  
  ________________________________________________________________
 |  house w/  |	house w/  |  house w/  |  house w/  |  house w/  |
