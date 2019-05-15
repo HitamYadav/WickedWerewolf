@@ -1,11 +1,10 @@
-public class Adventurer extends AdventureModel{
+public class Adventurer extends Health{
 
 private String name; 
 private int health;
 
 public Adventurer() {
 	this.name="No Name";
-	this.health=1;
 }
 public String getName() {
 	return name;
@@ -23,7 +22,7 @@ public void setHealth(int health) {
 }
 
 public String toString(){
-	return ("Werewolf Hunter "+ this.name);
+	return ("Werewolf Hunter "+ this.name);			// Overriding
 }
 
 
