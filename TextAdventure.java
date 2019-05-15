@@ -23,7 +23,7 @@ import java.util.Scanner;
 
 	System.out.println("Your only option for an escape route is reaching the abandoned car which is at the end of the street with houses filled with werewolves. ");
 
-	System.out.println(	"You must find a way to the items and most importantly, the car keys to escape the werewolves. you need to find the following things:\n1.Car keys \n2.Gas\n3.First Aid Kit\n4.Ammo \n5.Food and Water");
+	System.out.println(	"You must find a way to the items and most importantly, the gas and car keys to escape the werewolves. you need to find the following things:\n1.Car keys \n2.Gas\n3.First Aid Kit\n4.Ammo \n5.Food and Water");
 	
 	System.out.println("___________________________________________________________________________________________________");
 			
@@ -50,7 +50,9 @@ import java.util.Scanner;
 			x = 2;	
 		} else if (nav.equals("straight")) {
 			x = 3;
-		} 
+		} else if (nav.equals("inventory")) {
+			x = 4;
+		}
 		game.navigate(x);
 		nav="";
 		System.out.println("___________________________________________________________________________________________________");
