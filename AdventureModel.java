@@ -46,10 +46,10 @@ public class AdventureModel extends Werewolf {
 		 places[15] = "Car";	 
 	}
 	
-	public void interaction() {			// Overriding, also example of polymorphism
+	public void interaction() {			// Overriding
 		
-		Adventurer player = new Adventurer();
-		player.setHealth(0);
+		Health player = new Adventurer();		// Polymorphism
+		player.setHealth(1);
 		badEnd = true;
 		
 	}
@@ -59,37 +59,45 @@ public class AdventureModel extends Werewolf {
 		if (foodWater == true) {
 			inv[0] = "Food and Water";
 		} else {
-			inv[0] = "missing item";
+			inv[0] = "---";
 		}
 		if (ammo == true) {
 			inv[1] = "Ammo";
 		} else {
-			inv[1] = "missing item";
+			inv[1] = "---";
 		}
 		if (gas == true) {
 			inv[2] = "Gas";
 		} else {
-			inv[2] = "missing item";
+			inv[2] = "---";
 		}
 		if (firstAid == true) {
 			inv[3] = "First Aid Kit";
 		} else {
-			inv[3] = "missing item";
+			inv [3] = "---";
 		}
 		if (keys == true) {
 			inv[4] = "Keys";
 		} else {
-			inv[4] = "missing item";
-		}	
+			inv[4] = "---";
+		}
 	}
 	
 	/*
 	 * direction 1 = left
 	 * direction 2 = right
 	 * direction 3 = straight
+	 * 4 = inventory
 	 */
 	
 	public void navigate(int direction) {
+		
+		if (direction == 4) {
+			fillInv();
+			for (int i = 0; i < 5; i++) {
+				System.out.println(inv[i]);
+			}
+		}
 		
 		if (currentLocation == 0) {	// Street Segment 1 (Start)
 			if(direction == 1) {	// to House 1
@@ -98,10 +106,6 @@ public class AdventureModel extends Werewolf {
 					System.out.println("You're in the House on the left and have obtained food & water.");
 					currentLocation = 1;
 					foodWater = true;
-					fillInv();
-					for (int i = 0; i < 5; i++) {
-						System.out.println(inv[i]);
-					}
 					house1 = true;
 				} else {
 					System.out.println("You have already been to this house");
@@ -113,10 +117,6 @@ public class AdventureModel extends Werewolf {
 					System.out.println("You're in the House on the right and have obtained ammo.");
 					currentLocation = 2;
 					ammo = true;
-					fillInv();
-					for (int i = 0; i < 5; i++) {
-						System.out.println(inv[i]);
-					}
 					house2 = true;
 				} else {
 					System.out.println("You have already been to this house");
@@ -125,7 +125,7 @@ public class AdventureModel extends Werewolf {
 			} else if(direction == 3) {	// to Street Segment 2
 				
 				currentLocation = 3;
-				System.out.println("You have moved down the street and find another house on your left and on your right. Which direction would you like to go?");
+				System.out.println("You have moved down the street and find another house on your left and on your right. \nYou hear howling from the right. \nWhich direction would you like to go?");
 				
 			}
 		} else if (currentLocation == 1) { // House 1
@@ -166,10 +166,6 @@ public class AdventureModel extends Werewolf {
 					System.out.println("You're in the House on the left and have obtained gas.");
 					currentLocation = 4;
 					gas = true;					
-					fillInv();
-					for (int i = 0; i < 5; i++) {
-						System.out.println(inv[i]);
-					}
 					house3 = true;
 					
 				} else {
@@ -202,7 +198,7 @@ public class AdventureModel extends Werewolf {
 			} else if(direction == 3) {	// to Street Segment 3
 				
 				currentLocation = 6;
-				System.out.println("You have moved down the street and find another house on your left and on your right. Which direction would you like to go?");
+				System.out.println("You have moved down the street and find another house on your left and on your right. \nYou stop and watch as a pack of werewolves move further down the street. \nWhich direction would you like to go?");
 				
 			}
 		} else if (currentLocation == 4) { // House 3
@@ -264,10 +260,6 @@ public class AdventureModel extends Werewolf {
 					System.out.println("You're in the House on the right and have obtained a first aid kit.");
 					currentLocation = 8;
 					firstAid = true;
-					fillInv();
-					for (int i = 0; i < 5; i++) {
-						System.out.println(inv[i]);
-					}
 					house6 = true;
 					
 				} else {
@@ -279,7 +271,7 @@ public class AdventureModel extends Werewolf {
 			} else if(direction == 3) {	// to Street Segment 4
 				
 				currentLocation = 9;
-				System.out.println("You have moved down the street and find another house on your left and on your right. Which direction would you like to go?");
+				System.out.println("You have moved down the street and find another house on your left and on your right. \nA shriek of pain can be heard back from where you came from. \nWhich direction would you like to go?");
 				
 			}
 		} else if (currentLocation == 7) { // House 5
@@ -358,7 +350,7 @@ public class AdventureModel extends Werewolf {
 			} else if(direction == 3) {	// to Street Segment 5
 				
 				currentLocation = 12;
-				System.out.println("You have moved down the street and find another house on your left and on your right. Which direction would you like to go?");
+				System.out.println("You have moved down the street and find another house on your left and on your right. \nThe blood on the ground is still fresh and you see a corpse hidden behind a broken car. \nWhich direction would you like to go?");
 				
 			}
 		} else if (currentLocation == 10) { // House 7
@@ -399,10 +391,6 @@ public class AdventureModel extends Werewolf {
 					System.out.println("You're in the House on the left and have obtained car keys.");
 					currentLocation = 13;
 					keys = true;
-					fillInv();
-					for (int i = 0; i < 5; i++) {
-						System.out.println(inv[i]);
-					}
 					house9 = true;
 					
 				} else {
